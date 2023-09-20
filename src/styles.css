@@ -24,6 +24,8 @@ html {
 :root {
   --w-key-white: 5rem;
   --w-key-black: calc(var(--w-key-white) * 0.6);
+  --ar-key-white: 4 / 14;
+  --ar-key-black: 3 / 10;
 }
 
 .piano {
@@ -32,6 +34,7 @@ html {
 }
 
 .piano-key {
+  position: relative;
   border: none;
   cursor: pointer;
   outline: none;
@@ -46,14 +49,14 @@ html {
 }
 
 .piano-key.white {
-  aspect-ratio: 4 / 14;
+  aspect-ratio: var(--ar-key-white);
   width: var(--w-key-white);
   background-color: #fff;
   border: 1px solid #000;
 }
 
 .piano-key.black {
-  aspect-ratio: 3 / 10;
+  aspect-ratio: var(--ar-key-black);
   width: var(--w-key-black);
   background-color: #222;
   margin-left: calc((var(--w-key-black) / 2) * -1);
@@ -62,7 +65,13 @@ html {
   border-bottom-right-radius: 0.4rem;
   z-index: 1;
 }
-
+.piano-key.black::before {
+  display: block;
+  position: absolute;
+  width: var(--w-key-black);
+  height: 50rem;
+  background-color: pink;
+}
 .piano-key.pressed {
   transform: translateY(4px);
 }
