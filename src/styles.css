@@ -1,0 +1,68 @@
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --w-key-white: 5rem;
+  --w-key-black: calc(var(--w-key-white) * 0.6);
+}
+
+.piano {
+  display: flex;
+  align-items: flex-start;
+}
+
+.piano-key {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.1s;
+}
+.piano-key:first-of-type {
+  border-bottom-left-radius: 0.4rem;
+}
+
+.piano-key:last-of-type {
+  border-bottom-right-radius: 0.4rem;
+}
+
+.piano-key.white {
+  aspect-ratio: 4 / 14;
+  width: var(--w-key-white);
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.piano-key.black {
+  aspect-ratio: 3 / 10;
+  width: var(--w-key-black);
+  background-color: #222;
+  margin-left: calc((var(--w-key-black) / 2) * -1);
+  margin-right: calc((var(--w-key-black) / 2) * -1);
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  z-index: 1;
+}
+
+.piano-key.pressed {
+  transform: translateY(4px);
+}
