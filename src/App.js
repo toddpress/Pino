@@ -13,13 +13,13 @@ export default function App() {
     { note: "G#", type: "black" },
     { note: "A", type: "white" },
     { note: "A#", type: "black" },
-    { note: "B", type: "white" }
+    { note: "B", type: "white" },
   ];
   return (
     <div className="App">
       <Piano
         notes={notes}
-        onPlay={(note) => console.log(`Playing ${note.label}`)}
+        onPlay={(note) => console.log(`Playing ${note.note}`)}
       />
     </div>
   );

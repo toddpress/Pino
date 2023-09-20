@@ -65,13 +65,18 @@ html {
   border-bottom-right-radius: 0.4rem;
   z-index: 1;
 }
+
 .piano-key.black::before {
+  content: "";
   display: block;
   position: absolute;
   width: var(--w-key-black);
-  height: 50rem;
-  background-color: pink;
+  height: 4px;
+  top: 0;
+  left: 0;
+  background-color: #444;
 }
+
 .piano-key.pressed {
   transform: translateY(4px);
 }
